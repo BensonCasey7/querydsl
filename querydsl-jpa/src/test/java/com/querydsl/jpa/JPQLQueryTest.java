@@ -73,4 +73,14 @@ public class JPQLQueryTest {
         assertEquals("select cat\nfrom Cat cat", new JPAQuery<Void>().from(cat).toString());
     }
 
+    @Test
+    public void toStringWithConstants() {
+        JPAQuery<Void> jpa = new JPAQuery<Void>().from(cat);
+        String expectation = jpa.toString() + "\n" +
+                "logger: " + jpa.getLogger() + "\n" +
+                "hints: " + jpa.getHints() + "\n" +
+                "lockMode: " + jpa.getLockMode() + "\n" +
+                "flushMode: " + jpa.getFlushMode() + "\n";
+        assertEquals(expectation, jpa.toString(true));
+    }
 }

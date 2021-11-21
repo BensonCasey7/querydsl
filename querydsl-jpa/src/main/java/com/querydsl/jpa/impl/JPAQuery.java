@@ -21,6 +21,8 @@ import com.querydsl.core.Tuple;
 import com.querydsl.core.types.Expression;
 import com.querydsl.jpa.JPQLQuery;
 import com.querydsl.jpa.JPQLTemplates;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 
 /**
  * {@code JPAQuery} is the default implementation of the {@link JPQLQuery} interface for JPA
@@ -105,5 +107,17 @@ public class JPAQuery<T> extends AbstractJPAQuery<T, JPAQuery<T>> {
         @SuppressWarnings("unchecked") // This is the new type
         JPAQuery<Tuple> newType = (JPAQuery<Tuple>) this;
         return newType;
+    }
+
+    public String toString(boolean displayConstants) {
+        if (displayConstants) {
+            return toString() + "\n" +
+                    "logger: " + getLogger() + "\n" +
+                    "hints: " + getHints() + "\n" +
+                    "lockMode: " + getLockMode() + "\n" +
+                    "flushMode: " + getFlushMode() + "\n";
+        } else {
+            return toString();
+        }
     }
 }

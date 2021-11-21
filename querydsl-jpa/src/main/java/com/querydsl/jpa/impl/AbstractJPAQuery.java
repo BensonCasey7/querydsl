@@ -215,6 +215,42 @@ public abstract class AbstractJPAQuery<T, Q extends AbstractJPAQuery<T, Q>> exte
         }
     }
 
+    /**
+     * Returns Logger used by this class
+     *
+     * @return logger
+     */
+    public Object getLogger() {
+        return logger;
+    }
+
+    /**
+     * Returns hints used by this class
+     *
+     * @return hints
+     */
+    public Object getHints() {
+        return hints;
+    }
+
+    /**
+     * Returns LockModeType used by this class
+     *
+     * @return lockMode
+     */
+    public Object getLockMode() {
+        return lockMode;
+    }
+
+    /**
+     * Returns FlushModeType used by this class
+     *
+     * @return flushMode
+     */
+    public Object getFlushMode() {
+        return flushMode;
+    }
+
     @Override
     public CloseableIterator<T> iterate() {
         try {
