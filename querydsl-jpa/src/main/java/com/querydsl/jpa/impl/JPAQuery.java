@@ -109,6 +109,12 @@ public class JPAQuery<T> extends AbstractJPAQuery<T, JPAQuery<T>> {
         return newType;
     }
 
+    /**
+     * Returns parent toString along with printed constants
+     *
+     * @param displayConstants boolean flag
+     */
+    // CS427 Issue link: https://github.com/querydsl/querydsl/issues/2369
     public String toString(boolean displayConstants) {
         if (displayConstants) {
             return toString() + "\n" +

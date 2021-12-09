@@ -220,6 +220,7 @@ public abstract class AbstractJPAQuery<T, Q extends AbstractJPAQuery<T, Q>> exte
      *
      * @return logger
      */
+    // CS427 Issue link: https://github.com/querydsl/querydsl/issues/2369
     public Object getLogger() {
         return logger;
     }
@@ -229,6 +230,7 @@ public abstract class AbstractJPAQuery<T, Q extends AbstractJPAQuery<T, Q>> exte
      *
      * @return hints
      */
+    // CS427 Issue link: https://github.com/querydsl/querydsl/issues/2369
     public Object getHints() {
         return hints;
     }
@@ -238,6 +240,7 @@ public abstract class AbstractJPAQuery<T, Q extends AbstractJPAQuery<T, Q>> exte
      *
      * @return lockMode
      */
+    // CS427 Issue link: https://github.com/querydsl/querydsl/issues/2369
     public Object getLockMode() {
         return lockMode;
     }
@@ -247,6 +250,7 @@ public abstract class AbstractJPAQuery<T, Q extends AbstractJPAQuery<T, Q>> exte
      *
      * @return flushMode
      */
+    // CS427 Issue link: https://github.com/querydsl/querydsl/issues/2369
     public Object getFlushMode() {
         return flushMode;
     }
